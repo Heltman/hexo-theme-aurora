@@ -89,7 +89,6 @@ module.exports = function (hexo) {
     apiData = posts.addPaginationPost(apiData)
     apiData = posts.addArticles(apiData)
     apiData = posts.addFeatures(apiData)
-    apiData = posts.addAuthorPost(apiData)
     // Updated feature status.
     configs.theme_config.theme.feature = posts.isFeature
 
@@ -105,7 +104,7 @@ module.exports = function (hexo) {
 
     const tags = new TagGenerator(site.tags, site.posts, configs)
     apiData = tags.addTags(apiData)
-
+    apiData = posts.addAuthorPost(apiData)
     const pages = new PageGenerator(site.pages)
     apiData = pages.addPages(apiData)
 
