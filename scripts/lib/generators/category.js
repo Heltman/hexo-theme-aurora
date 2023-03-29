@@ -15,10 +15,12 @@ class CategoryGenerator {
     this.posts = posts
     this.configs = configs
     this.reduceCategories()
-    for(let cat of this.data) {
-      cat.data.postlist.sort(function (a, b) {
-        return a.date< b.date? 1 : -1;
-      })
+    if (this.data instanceof Array) {
+      for (let cat of this.data) {
+        cat.data.postlist.sort(function (a, b) {
+          return a.date < b.date ? 1 : -1;
+        })
+      }
     }
   }
 
