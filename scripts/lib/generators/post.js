@@ -194,9 +194,9 @@ class PostGenerator {
       })
     }
 
-    if (post.categories && post.categories.length > 0) {
+    if (post.tags && post.tags.length > 0) {
       post.tags.forEach(function (tag) {
-        authorPostData.tags.add(tag)
+        authorPostData.tags.add(tag.name)
       })
     }
 
